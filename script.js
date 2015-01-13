@@ -62,6 +62,7 @@ $(document).ready(function() {
 		};
 	};
 	
+	deal(deck);
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
 	var war = function(player1, player2){
 		if(player1[0] > player2[0]) {
@@ -94,13 +95,13 @@ $(document).ready(function() {
 		if(winner === 'p1') {
 			cards_player_2.splice(0, 1);
 			cards_player_1.splice(0, 1);
-			cards_player_1.push();
+			cards_player_1.push(cards_player_1[0], cards_player_2[0]);
 		} else if(winner === 'p2') {
 			cards_player_1.splice(0, 1);
 			cards_player_2.splice(0, 1);
-			cards_player_2.push();
-		} else {
-			blackDiamond
+			cards_player_2.push(cards_player_1[0], cards_player_2[0]);
+		//} else {
+			//blackDiamond
 		};
 		//this function (defined below) will continue to the next turn
 		advance();
